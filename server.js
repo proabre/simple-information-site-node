@@ -56,3 +56,11 @@ server.listen(8080, "localhost", () => {
 // 300 = go somewhere else
 // 400 = the request is a problem
 // 500 = the server has a problem
+
+//as our project gets bigger and much larger using swtiches to route requests is not easy so there is another way of doing it with 3rd party package called Express which can help as mange all of it in much easier way
+
+//Nodemon is a development tool for Node.js that automatically restarts your server whenever you change your code.
+// node server       → starts once
+// nodemon server    → starts and watches for changes so ne need to restaer server manually everytime you make changes to your project
+
+//to use nodemon first install it with npm install -g nodemon
