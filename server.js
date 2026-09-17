@@ -17,6 +17,13 @@ const server = http.createServer((req, res) => {
       path += "about.html";
       res.statusCode = 200;
       break;
+
+    case "/about-me":
+      //redirecting about-me to about page
+      //status code 301 means Resource has permanently moved to about page in this case
+      res.statusCode = 301;
+      res.setHeader("location", "/about");
+      res.end();
     case "/contact-me":
       path += "/contact-me.html";
       res.statusCode = 200;
