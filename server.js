@@ -10,16 +10,20 @@ const server = http.createServer((req, res) => {
   switch (req.url) {
     case "/":
       path += "index.html";
+      statusCode = 200;
       break;
 
     case "/about":
       path += "about.html";
+      statusCode = 200;
       break;
     case "/contact-me":
       path += "/contact-me.html";
+      statusCode = 200;
       break;
     default:
       path += "/404.html";
+      statusCode = 404;
       break;
   }
 
@@ -39,3 +43,9 @@ const server = http.createServer((req, res) => {
 server.listen(8080, "localhost", () => {
   console.log("listening for requests on http://localhost:8080");
 });
+
+//status code
+// 200 = it worked
+// 300 = go somewhere else
+// 400 = the request is a problem
+// 500 = the server has a problem
