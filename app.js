@@ -32,4 +32,17 @@ app.get("/contact", (req, res) => {
   //res.send("<p>Express home page</p>");
   res.sendFile("./views/contact-me.html", { root: __dirname });
 });
+
+//redirects
+app.get("/about-us", (re, res) => {
+  //when we tyoe /about-us on browser it redirects to about page
+  res.redirect("/about");
+});
+
+//404
+//should be written at the bottom of the code always
+app.use((req, res) => {
+  res.status(404).sendFile("./views/404.html", { root: __dirname });
+});
+
 //Express.js is a web framework for Node.js. It helps you build web servers and APIs more easily than using Node's built-in http module directly.
